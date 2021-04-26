@@ -20,7 +20,6 @@ html {
   margin-right: auto;
 }
 
-
 .flex-container-title {
   position: absolute;
   display: flex; /* Specifies the container as a flexbox container */
@@ -36,12 +35,47 @@ html {
   /* flex: 3; */
 }
 
-.Introduction{
+.Introduction {
   color: white;
   font-size: small;
 }
 
-.title-flex-item-2{
+.title-flex-item-2 {
   width: 250px;
   height: 240px;
 }
+
+/****** Styling cards *****/
+
+.flex-container-card {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  margin: 100px 250px 100px 100px;
+}
+
+.card-flex-item-1 {
+  font-size: x-large;
+  flex-basis: 550px;
+}
+
+.card-flex-item-2 {
+  width: 250px;
+  height: 240px;
+}
+
+/*************************/
+
+/****** Styling cards *****/
+
+.Footer{
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.Footer-item {
+  
+}
+
+/*************************/
