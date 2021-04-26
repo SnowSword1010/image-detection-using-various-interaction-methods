@@ -1,0 +1,47 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.FirstDiv {
+  /* background-color: #708238 !important; */
+  background-color: #f21170 !important;
+}
+
+.Heading {
+  color: white;
+  font-size: xx-large;
+  /* font-family: ubuntu; */
+  text-align: center;
+  display: inline-block;
+  margin-left: 32.25%;
+  margin-right: auto;
+}
+
+
+.flex-container-title {
+  position: absolute;
+  display: flex; /* Specifies the container as a flexbox container */
+  justify-content: space-around; /* justifies flex container's items with respect to the start of the main axis */
+  margin: 240px 250px 0px 100px;
+  align-items: center;
+}
+
+.title-flex-item-1 {
+  color: white;
+  font-size: xx-large;
+  flex-basis: 550px;
+  /* flex: 3; */
+}
+
+.Introduction{
+  color: white;
+  font-size: small;
+}
+
+.title-flex-item-2{
+  width: 250px;
+  height: 240px;
+}
