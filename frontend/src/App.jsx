@@ -4,6 +4,7 @@ import Background from './Components/Background';
 import Navbar from './Components/Navbar';
 import Display from './Components/Display';
 import Card from './Components/Card';
+import TransitionHeading from './Components/TransitionHeading';
 import Team from './Components/Team';
 import Footer from './Components/Footer';
 
@@ -20,6 +21,8 @@ function App() {
   const content3 = "Artificial Production of human speech";
   const img3 = "speech";
 
+  const transitionName1 = "Features";
+  const transitionName2 = "Out Team";
   return (
     <>
       <div className="FirstDiv">
@@ -29,7 +32,12 @@ function App() {
         <Display></Display>
         <Background></Background>
       </div>
-      <Card title={title1} content = {content1} img = {img1}></Card>
+      <TransitionHeading name={transitionName1} />
+      <div className="background">
+        <Card title={title1} content={content1} img={img1} flip={false}></Card>
+        <Card title={title2} content={content2} img={img2} flip={true}></Card>
+        <Card title={title3} content={content3} img={img3} flip={false}></Card>
+      </div>
       <Footer></Footer>
     </>
   );
