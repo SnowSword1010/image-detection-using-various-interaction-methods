@@ -4,7 +4,7 @@ import rightArrow from './icons/right-arrow.png';
 
 export default function LoadingButton(props) {
     function simulateNetworkRequest() {
-        return new Promise((resolve) => setTimeout(resolve, 2000));
+        return new Promise((resolve) => setTimeout(resolve, 300));
     }
 
     function LoadingButton() {
@@ -22,11 +22,11 @@ export default function LoadingButton(props) {
 
         return (
             <Button
-                variant="success"
+                variant={props.variant}
                 disabled={isLoading}
                 onClick={!isLoading ? handleClick : null}
             >
-                {isLoading ? 'Loading…' : 'Try it ↲'}
+                {isLoading ? 'Loading…' : props.content}
             </Button>
         );
     }
