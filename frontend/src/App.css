@@ -8,8 +8,50 @@ html {
 .FirstDiv {
   /* background-color: #708238 !important; */
   /* background-color: #f21170 !important; */
-  background-color: #FC427B !important;
+  background-color: #fc427b !important;
 }
+
+/*****Styling Navbar*****/
+
+.nav-wrapper {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+.custom-nav {
+  /* display: flex; */
+}
+.custom-navbar-items {
+  margin-left: 20px;
+  color: white;
+}
+
+.our-team {
+  float: right;
+}
+
+/***********************/
+
+/*******Section-2*******/
+
+.section-2 {
+  background-color: #181327;
+}
+
+.section-2-heading {
+  color: goldenrod;
+  padding-top: 100px;
+}
+
+.section-2-content {
+  color: white;
+  margin: 40px 100px 0px 100px;
+  font-size: x-large;
+  padding-bottom: 150px;
+}
+
+/***********************/
 
 .Heading {
   color: white;
@@ -25,7 +67,7 @@ html {
   position: absolute;
   display: flex; /* Specifies the container as a flexbox container */
   justify-content: space-around; /* justifies flex container's items with respect to the start of the main axis */
-  margin: 240px 250px 0px 100px;
+  margin: 300px 250px 0px 100px;
   align-items: center;
 }
 
@@ -33,12 +75,16 @@ html {
   color: white;
   font-size: xx-large;
   flex-basis: 550px;
+  font-weight: bold;
+  margin-left: 200px;
+  margin-right: 400px;
   /* flex: 3; */
 }
 
 .Introduction {
   color: white;
-  font-size: small;
+  font-size: large;
+  margin-top: 10px;
 }
 
 .title-flex-item-2 {
@@ -65,7 +111,7 @@ html {
   height: 240px;
 }
 
-.card-content{
+.card-content {
   font-size: 20px;
 }
 
@@ -73,24 +119,27 @@ html {
 
 /*** Styling transitions ***/
 
-.transition{
+.transition {
   font-size: larger;
   text-align: center;
-  color: black;
+  /* margin-top: 100px; */
+}
+
+.transition-heading {
+  padding-top: 80px;
 }
 
 /***************************/
 
 /****** Styling footer *****/
 
-.Footer{
+.Footer {
   background-color: black;
   color: white;
   text-align: center;
 }
 
 .Footer-item {
-  
 }
 
 /*************************/
@@ -98,4 +147,43 @@ html {
 .reduce-to-icon {
   height: 33px;
   padding-bottom: 3px;
+}
+
+.reduce-to-img{
+  height: 50px;
+  padding-bottom: 6px;
+}
+
+/** section-3 **/
+
+.section-3 {
+  /* background-color: #181327; */
+}
+
+/**************/
+
+/** buttons **/
+
+.loading-button {
+  margin-right: 10px;
+}
+
+/*************/
+
+.tech-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+/********/
+
+.section-4-heading {
+  color: goldenrod;
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+.iconCardDiv{
+  color: white;
+  padding-bottom: 50px;
 }
