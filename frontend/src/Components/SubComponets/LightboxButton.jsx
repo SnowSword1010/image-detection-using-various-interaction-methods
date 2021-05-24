@@ -21,10 +21,8 @@ function MyVerticallyCenteredModal(props) {
             </Modal.Header>
             <Modal.Body>
                 <p>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                    consectetur ac, vestibulum at eros.
-          </p>
+                    {props.detailedContent}
+                </p>
                 <h4>Instructions to use the module <img src={instructionsImg} className="reduce-to-icon"></img></h4>
                 <ol>
                     {instructions.map((instructionPoint, idx) =>

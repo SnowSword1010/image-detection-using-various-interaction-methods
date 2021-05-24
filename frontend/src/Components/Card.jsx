@@ -9,7 +9,10 @@ import LoadingButton from './SubComponets/LoadingButton';
 import LightBoxButton from './SubComponets/LightboxButton';
 import Button from 'react-bootstrap/Button';
 
-export default function Card(props) {
+import Nav from 'react-bootstrap/Nav';
+import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
+
+function Card(props) {
 
     useEffect(() => {
         AOS.init({
@@ -36,25 +39,41 @@ export default function Card(props) {
 
 
     if (flip == true) {
-        return (<div data-aos="zoom-in-up" className="flex-container-card text">
-            <div className="card-flex-item-1">
-                <div >{props.title}</div>
-                <div className="card-content">{props.content}</div>
-                <LoadingButton variant="success" content="Try it ↲" />
-                <LightBoxButton heading={props.title} detailedContent={props.detailedContent} instructions={props.instructions} />
+        return (
+            <div data-aos="zoom-in-up" className="flex-container-card text">
+                <Router forceRefresh={true}>
+                    <div className="card-flex-item-1">
+                        <div >{props.title}</div>
+                        <div className="card-content">{props.content}</div>
+                        <Link to={"/form/" + props.img}>
+                            <Button variant="primary">Primary</Button>{' '}
+                        </Link>
+                        <LoadingButton variant="success" content="Try it ↲" />
+                        <LightBoxButton heading={props.title} detailedContent={props.detailedContent} instructions={props.instructions} />
+                    </div>
+                    <img src={logo} className="card-flex-item-2"></img>
+                </Router>
             </div>
-            <img src={logo} className="card-flex-item-2"></img>
-        </div>)
+        )
     }
     else {
-        return (<div data-aos="zoom-in-down" className="flex-container-card text" >
-            <img src={logo} className="card-flex-item-2"></img>
-            <div className="card-flex-item-1">
-                <div>{props.title}</div>
-                <div className="card-content">{props.content}</div>
-                <LoadingButton variant="success" content="Try it ↲" />
-                <LightBoxButton heading={props.title} detailedContent={props.detailedContent} instructions={props.instructions} />
+        return (
+            <div data-aos="zoom-in-down" className="flex-container-card text" >
+                <Router forceRefresh={true}>
+                    <img src={logo} className="card-flex-item-2"></img>
+                    <div className="card-flex-item-1">
+                        <div>{props.title}</div>
+                        <div className="card-content">{props.content}</div>
+                        <Link to={"/form/" + props.img}>
+                            <Button variant="primary">Primary</Button>{' '}
+                        </Link>
+                        <LoadingButton variant="success" content="Try it ↲" />
+                        <LightBoxButton heading={props.title} detailedContent={props.detailedContent} instructions={props.instructions} />
+                    </div>
+                </Router>
             </div>
-        </div>)
+        )
     }
 }
+
+export default withRouter(Card);

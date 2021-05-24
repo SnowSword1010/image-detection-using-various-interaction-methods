@@ -47,8 +47,9 @@ html {
 .section-2-content {
   color: white;
   margin: 40px 100px 0px 100px;
+  text-align: center;
   font-size: x-large;
-  padding-bottom: 150px;
+  padding-bottom: 100px;
 }
 
 /***********************/
@@ -73,7 +74,7 @@ html {
 
 .title-flex-item-1 {
   color: white;
-  font-size: xx-large;
+  font-size: 38px;
   flex-basis: 550px;
   font-weight: bold;
   margin-left: 200px;

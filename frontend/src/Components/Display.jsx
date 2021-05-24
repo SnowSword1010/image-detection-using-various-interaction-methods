@@ -10,7 +10,7 @@ export default function Display() {
         });
     }, []);
 
-    const text = "Lorem ipsum dolor sit amet";
+    const text = "What you need is vision not sight.";
     return (
         <div className="flex-container-title">
             <div data-aos="fade-up" className="title-flex-item-1">Image detection using various <br />Interaction Methods<br /><div className="Introduction">{text}</div></div>

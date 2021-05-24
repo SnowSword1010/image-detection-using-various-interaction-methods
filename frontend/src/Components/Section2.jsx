@@ -17,10 +17,11 @@ export default function Section2() {
             </div>
             <div className="section-2-content">
                 <p data-aos="fade-right">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    "Existing devices for visually impaired people prove to be ineffective in providing them with audio cues of their surroundings"
             </p>
                 <p data-aos="fade-left">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    This project aims to take the conventional walking stick up a notch by enabling it with features like object detection and depth estimation. Though the final product assumes the integration of Raspberry Pi and a wireless camera with the walking stick, this website demonstrates how these features would come about in the final product.
+                    It further simulates a special device that utilises Optical Character Recognition and Speech Synthesis to facilitate a better understanding of visual text.
             </p>
             </div>
         </div>
