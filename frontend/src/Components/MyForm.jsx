@@ -6,11 +6,24 @@ import Form from 'react-bootstrap/Form';
 
 export default function MyForm(props) {
 
+    const formName = window.location.pathname.split('/')[2];
+    let flag = true;
+    if (formName == 'object' || formName == 'depth') {
+        flag = true;
+    }
+    else if (formName == 'ocr' || formName == 'speech') {
+        flag = false;
+    }
+
+
+
+    /****** LOADING BUTTON STATE CONFIGURATION ******/
+
+    const [isLoading, setLoading] = useState(false);
+
     function simulateNetworkRequest() {
         return new Promise((resolve) => setTimeout(resolve, 300));
     }
-
-    const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
         if (isLoading) {
@@ -21,25 +34,22 @@ export default function MyForm(props) {
     }, [isLoading]);
 
     const handleClick = (e) => {
-        // console.log(e.target);
         setLoading(true);
     }
 
+    // handleClick() function is called in the handleSubmit function
 
-    const formName = window.location.pathname.split('/')[2];
-    let flag = true;
-    if (formName == 'object' || formName == 'depth') {
-        flag = true;
-    }
-    else if (formName == 'ocr' || formName == 'speech') {
-        flag = false;
-    }
+    /************************************************/
+
+
 
     const [checked, setChecked] = useState(false);
 
     function handleRadioClick() {
         setChecked(!checked);
     }
+
+    /********** SLIDER STATE CONFIGURATION **********/
 
     const [sliderState, setSliderState] = useState(0);
     function setState() {
@@ -52,42 +62,61 @@ export default function MyForm(props) {
         setValue(newValue);
     };
 
+    /************************************************/
+
+
+    /******** SUBMIT CONFIG(BACKEND CONNECT) ********/
+
     function handleSubmit(e) {
         e.preventDefault();
-        // name
-        console.log(e.target[0].value);
-        // slider
-        console.log(e.target[1].value);
 
-        // Accent
-        console.log(e.target[2].value);
+        const formUserName = e.target[0].value;
+
+        const dummyData = {
+            name: e.target[0].value,
+            slider: e.target[1].value,
+            accent: e.target[2].value
+        };
+
+
+        fetch('/script1', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(dummyData)
+        }).then(
+            response => response.json()
+        ).then(data => console.log(data));
+
+
         if (!isLoading) {
             handleClick();
         }
-        // !isLoading ?  : null
     }
+
+    /************************************************/
+
 
     if (flag == true) {
         return (
 
             <div>
                 <Form onSubmit={handleSubmit}>
-                    <TextField id="standard-basic" label="Name" />
+                    <TextField name="username" id="standard-basic" label="Name" />
                     <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" marks
                         min={0}
                         max={50}
                         step={5}
                         valueLabelDisplay="auto" />
-                    
-                        <Form.Label>Accent</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
-                            <option>Choose...</option>
-                            <option>Male English</option>
-                            <option>Female English</option>
-                            <option>Male Hindi</option>
-                            <option>Female Hindi</option>
-                        </Form.Control>
-                    
+
+                    <Form.Label>Accent</Form.Label>
+                    <Form.Control as="select" defaultValue="Choose...">
+                        <option>Choose...</option>
+                        <option>Male English</option>
+                        <option>Female English</option>
+                        <option>Male Hindi</option>
+                        <option>Female Hindi</option>
+                    </Form.Control>
+
                     <Button
                         variant="success"
                         type="submit"
