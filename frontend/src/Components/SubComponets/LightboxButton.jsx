@@ -68,7 +68,7 @@ export default function LightBoxButton(props) {
         }
 
         return (
-            <>
+            <div>
                 <Button
                     variant={"warning"}
                     disabled={isLoading}
@@ -85,7 +85,7 @@ export default function LightBoxButton(props) {
                     instructions={props.instructions}
                 />
 
-            </>
+            </div>
         );
     }
     return (<LoadingButton />);

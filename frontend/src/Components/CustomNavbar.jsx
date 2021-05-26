@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Navbar';

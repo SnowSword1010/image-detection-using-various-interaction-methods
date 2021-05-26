@@ -9,7 +9,7 @@ import "animate.css/animate.min.css";
 import { BrowserRouter as Router, Route, Link, Switch, withRouter } from "react-router-dom";
 
 import HomePage from './Components/HomePage';
-import Form from './Components/Form';
+import MyForm from './Components/MyForm';
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
       <div>
         <Router>
           <Route exact path="/" component={withRouter(HomePage)} />
-          <Route exact path="/form/:data" component={Form}/>
+          <Route exact path="/form/:data" component={MyForm}/>
         </Router>
         <Footer></Footer>
       </div>
