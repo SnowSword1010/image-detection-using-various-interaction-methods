@@ -19,16 +19,26 @@ def script1():
         print(name)
         print(threshold)
         print(accent)
-        
 
-    # PANDA
+        # PANDA (write code here)
+
+
     return jsonify(status="200")
 
 
 @app.route('/script2', methods=['POST'])
 def script2():
     if(request.method == 'POST'):
-
-        # SHEFFY
+        print('post app')
+        req = request.json
+        name = req['name']
+        volume = req['volume']
+        language = req['language']
+        accent = req['accent']
+        print(name)
+        print(volume)
+        print(language)
+        print(accent)
+        # SHEFFY (write code here)
 
         return jsonify(status="200")

@@ -43,10 +43,10 @@ export default function MyForm(props) {
 
 
 
-    const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = useState("");
 
-    function handleRadioClick() {
-        setChecked(!checked);
+    function handleRadioClick(e) {
+        setChecked(e.target.value);
     }
 
     /********** SLIDER STATE CONFIGURATION **********/
@@ -67,7 +67,7 @@ export default function MyForm(props) {
 
     /******** SUBMIT CONFIG(BACKEND CONNECT) ********/
 
-    function handleSubmit(e) {
+    function handleSarthakSubmit(e) {
         e.preventDefault();
 
         const formUserName = e.target[0].value;
@@ -96,11 +96,38 @@ export default function MyForm(props) {
     /************************************************/
 
 
+    function handleSheffySubmit(e) {
+        e.preventDefault();
+
+        console.log(e.target[3]);
+        const dummyData = {
+            name: e.target[0].value,
+            volume: e.target[1].value,
+            language: checked,
+            accent: e.target[4].value
+        };
+
+
+        fetch('/script2', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(dummyData)
+        }).then(
+            response => response.json()
+        ).then(data => console.log(data));
+
+
+        if (!isLoading) {
+            handleClick();
+        }
+    }
+
+
     if (flag == true) {
         return (
 
             <div>
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSarthakSubmit}>
                     <TextField name="username" id="standard-basic" label="Name" />
                     <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" marks
                         min={0}
@@ -121,7 +148,6 @@ export default function MyForm(props) {
                         variant="success"
                         type="submit"
                         disabled={isLoading}
-                        // onClick={}
                         className="loading-button"
                     >
                         {isLoading ? 'Loading…' : "Submit"}
@@ -134,7 +160,42 @@ export default function MyForm(props) {
     else {
         return (
             <div>
-                Not Form
+                <Form onSubmit={handleSheffySubmit}>
+                    <TextField name="username" id="standard-basic" label="Name" />
+                    <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" marks
+                        min={0}
+                        max={50}
+                        step={5}
+                        valueLabelDisplay="auto" />
+
+                    {/* <div key={`inline-radio`} className="mb-3" onChange={handle}>
+                        <Form.Check inline label="English" name="English" type="radio" id={`inline-radio-1`} />
+                        <Form.Check inline label="Hindi" name="Hindi" type="radio" id={`inline-radio-2`} />
+                    </div> */}
+
+                    <div onChange={handleRadioClick}>
+                        <input type="radio" value="English" name="gender" /> English
+                        <input type="radio" value="Hindi" name="gender" /> Hindi
+                    </div>
+
+                    <Form.Label>Accent</Form.Label>
+                    <Form.Control as="select" defaultValue="Choose...">
+                        <option>Choose...</option>
+                        <option>Male English</option>
+                        <option>Female English</option>
+                        <option>Male Hindi</option>
+                        <option>Female Hindi</option>
+                    </Form.Control>
+
+                    <Button
+                        variant="success"
+                        type="submit"
+                        disabled={isLoading}
+                        className="loading-button"
+                    >
+                        {isLoading ? 'Loading…' : "Submit"}
+                    </Button>
+                </Form>
             </div>
         )
     }
