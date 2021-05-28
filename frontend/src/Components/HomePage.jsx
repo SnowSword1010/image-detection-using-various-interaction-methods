@@ -8,7 +8,7 @@ import Card from './Card';
 import TransitionHeading from './TransitionHeading';
 import Section2 from './Section2';
 import Technologies from './Technologies';
-
+import FeatureCard from './FeatureCard';
 import "animate.css/animate.min.css";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -67,11 +67,12 @@ export default function HomePage() {
             <div id="features" className="section-3">
 
                 <TransitionHeading name={transitionName1} />
-
-                <Card title={title1} content={content1} img={img1} flip={false} detailedContent={detailedContent1} instructions={instructions1} />
+                <FeatureCard title="Smart Camera using Cutting Edge Technologies" content={content1} img={img1} flip={true}></FeatureCard>
+                <FeatureCard title="Intelligent Text2Speech Converter" content={content2} img={img2} flip={false}></FeatureCard>
+                {/* <Card title={title1} content={content1} img={img1} flip={false} detailedContent={detailedContent1} instructions={instructions1} />
                 <Card title={title2} content={content2} img={img2} flip={true} detailedContent={detailedContent2} instructions={instructions2} />
                 <Card title={title3} content={content3} img={img3} flip={false} detailedContent={detailedContent3} instructions={instructions3} />
-                <Card title={title4} content={content4} img={img4} flip={true} detailedContent={detailedContent4} instructions={instructions4} />
+                <Card title={title4} content={content4} img={img4} flip={true} detailedContent={detailedContent4} instructions={instructions4} /> */}
             </div>
             <Technologies></Technologies>
         </div>

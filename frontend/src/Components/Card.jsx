@@ -46,9 +46,8 @@ function Card(props) {
                         <div >{props.title}</div>
                         <div className="card-content">{props.content}</div>
                         <Link to={"/form/" + props.img}>
-                            <Button variant="primary">Primary</Button>{' '}
+                            {/* <Button variant="primary">Primary</Button>{' '} */}
                         </Link>
-                        <LoadingButton variant="success" content="Try it ↲" />
                         <LightBoxButton heading={props.title} detailedContent={props.detailedContent} instructions={props.instructions} />
                     </div>
                     <img src={logo} className="card-flex-item-2"></img>
@@ -65,9 +64,9 @@ function Card(props) {
                         <div>{props.title}</div>
                         <div className="card-content">{props.content}</div>
                         <Link to={"/form/" + props.img}>
-                            <Button variant="primary">Primary</Button>{' '}
+                            {/* <Button variant="primary">Primary</Button>{' '} */}
                         </Link>
-                        <LoadingButton variant="success" content="Try it ↲" />
+                        
                         <LightBoxButton heading={props.title} detailedContent={props.detailedContent} instructions={props.instructions} />
                     </div>
                 </Router>

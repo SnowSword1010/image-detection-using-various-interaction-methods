@@ -15,7 +15,7 @@ export default function CustomNavbar() {
     }, []);
 
     return (
-        <div className ="nav-wrapper">
+        <div className="nav-wrapper">
             <Navbar bg="dark" className="custom-nav">
                 <Navbar.Brand href="#home" className="custom-navbar-items">
                     <img
@@ -33,15 +33,6 @@ export default function CustomNavbar() {
                 <Navbar.Brand href="#features">
                     <div className="custom-navbar-items" data-aos="zoom-in">Features</div>
                 </Navbar.Brand>
-                {/* <Navbar.Brand href="#home">
-                    <div className="custom-navbar-items">Depth Detection</div>
-                </Navbar.Brand>
-                <Navbar.Brand href="#home">
-                    <div className="custom-navbar-items">OCR</div>
-                </Navbar.Brand>
-                <Navbar.Brand href="#home">
-                    <div className="custom-navbar-items">Speech Synthesis</div>
-                </Navbar.Brand> */}
                 <Navbar.Brand href="#technologies" className="our-team">
                     <div className="custom-navbar-items our-team" data-aos="zoom-in">Technologies Used</div>
                 </Navbar.Brand>
