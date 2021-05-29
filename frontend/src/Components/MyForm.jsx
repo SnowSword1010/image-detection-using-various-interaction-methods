@@ -19,6 +19,8 @@ import languages from './SubComponets/icons/languages.png';
 export default function MyForm(props) {
 
 
+    const [options, setOptions] = useState([]);
+
     const formName = window.location.pathname.split('/')[2];
     let flag = true;
     if (formName == 'object' || formName == 'depth') {
@@ -60,16 +62,20 @@ export default function MyForm(props) {
     let checkRadio = false;
 
     function handleRadioClick(e) {
+        if (e.target.value == 'English') {
+            setOptions(["English (Australia)", "English (United Kingdom)", "English (United States)", "English (India)"])
+        }
+        if (e.target.value == 'Hindi') {
+            setOptions(["Hindi (India)"]);
+        }
+
         setChecked(e.target.value);
         checkRadio = true;
+
+
     }
 
     /********** SLIDER STATE CONFIGURATION **********/
-
-    const [sliderState, setSliderState] = useState(0);
-    function setState() {
-        setState()
-    }
 
     const [value, setValue] = React.useState(30);
 
@@ -325,16 +331,9 @@ export default function MyForm(props) {
                     <div className="form-grid-item-6">
                         <Form.Control as="select" defaultValue="Choose...">
                             <option>Choose...</option>
-                            <option>English (Australia)</option>
-                            <option>English (United Kingdom)</option>
-                            <option>English (United States)</option>
-                            <option>English (Canada)</option>
-                            <option>English (India)</option>
-                            <option>English (Ireland)</option>
-                            <option>English (South Africa)</option>
-                            <option>Hindi (India) </option>
-                            <option>Hindi (Fiji) </option>
-                            <option>Urdu (Pakistan) </option>
+                            {options.map((item) => {
+                                return <option>{item}</option>
+                            })}
                         </Form.Control>
                     </div>
 
@@ -355,7 +354,7 @@ export default function MyForm(props) {
                         </Button>
                     </div>
                 </Form>
-            </div >
+            </div>
         )
     }
 }

@@ -86,21 +86,33 @@ def script2():
     if(request.method == 'POST'):
         print('post app')
         req = request.json
-        name = req['name']
-        volume = req['volume']
-        language = req['language']
-        accent = req['accent']
-        print(name)
-        print(volume)
-        print(language)
-        print(accent)
+        nameOutput = req['name']
+        volumeOutput = req['volume']
+        languageOutput = req['language']
+        accentOutput = req['accent']
+        print(nameOutput)
+        print(volumeOutput)
+        print(languageOutput)
+        print(accentOutput)
 
         # SHEFFY (write code here)
-        language=""
-        accent=""
-        
+        if (accentOutput == 'English (Australia)'):
+            accentOutput = "com.au"
+        if (accentOutput == 'English (United Kingdom)'):
+            accentOutput = "co.uk"
+        if (accentOutput == 'English (United States)'):
+            accentOutput = "com"
+        if (accentOutput == 'English (India)'):
+            accentOutput = "co.in"
+        if (accentOutput == 'Hindi (India)'):
+            accentOutput = "Hindi"
 
-    
+        if (languageOutput == 'English'):
+            languageOutput = "en"
+        if (languageOutput == 'Hindi'):
+            languageOutput = "hi"
+
+        
         # Create a new VideoCapture object
         cam = cv2.VideoCapture(0)
 
@@ -127,8 +139,8 @@ def script2():
                 cv2.imwrite(img_name, img)
 
                 print("{} written!".format(img_name))
-                myOCR=OCR(img_name)
-                OCRValue=myOCR.ocr_core(img_name)
+                myOCR=OCR(img_name, accentOutput, languageOutput, nameOutput)
+                OCRValue=myOCR.ocr_core()
                 print(OCRValue)
                 img_counter += 1
                 delta = 0

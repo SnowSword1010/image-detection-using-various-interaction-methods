@@ -43,11 +43,9 @@ function Card(props) {
             <div data-aos="zoom-in-up" className="flex-container-card text">
                 <Router forceRefresh={true}>
                     <div className="card-flex-item-1">
-                        <div >{props.title}</div>
+                        <div className="card-title">{props.title}</div>
                         <div className="card-content">{props.content}</div>
-                        <Link to={"/form/" + props.img}>
-                            {/* <Button variant="primary">Primary</Button>{' '} */}
-                        </Link>
+                        <Link to={"/form/" + props.img}></Link>
                         <LightBoxButton heading={props.title} detailedContent={props.detailedContent} instructions={props.instructions} />
                     </div>
                     <img src={logo} className="card-flex-item-2"></img>
@@ -61,12 +59,9 @@ function Card(props) {
                 <Router forceRefresh={true}>
                     <img src={logo} className="card-flex-item-2"></img>
                     <div className="card-flex-item-1">
-                        <div>{props.title}</div>
+                        <div className="card-title">{props.title}</div>
                         <div className="card-content">{props.content}</div>
-                        <Link to={"/form/" + props.img}>
-                            {/* <Button variant="primary">Primary</Button>{' '} */}
-                        </Link>
-                        
+                        <Link to={"/form/" + props.img}></Link>
                         <LightBoxButton heading={props.title} detailedContent={props.detailedContent} instructions={props.instructions} />
                     </div>
                 </Router>

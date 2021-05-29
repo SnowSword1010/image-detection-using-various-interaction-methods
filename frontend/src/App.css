@@ -23,6 +23,7 @@ html {
   /* display: flex; */
 }
 .custom-navbar-items {
+  font-family: 'Montserrat', sans-serif;
   margin-left: 20px;
   color: white;
 }
@@ -40,11 +41,13 @@ html {
 }
 
 .section-2-heading {
+  font-family: "Montserrat", sans-serif;
   color: goldenrod;
   padding-top: 100px;
 }
 
 .section-2-content {
+  font-family: "Merriweather", serif;
   color: white;
   margin: 40px 100px 0px 100px;
   text-align: center;
@@ -112,8 +115,15 @@ html {
   height: 240px;
 }
 
+.card-title {
+  font-family: "Montserrat", sans-serif;
+}
+
 .card-content {
+  padding-top: 3px;
+  padding-bottom: 5px;
   font-size: 20px;
+  font-family: "Merriweather", serif;
 }
 
 /*************************/
@@ -128,6 +138,8 @@ html {
 
 .transition-heading {
   padding-top: 80px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
 }
 
 /***************************/
@@ -179,6 +191,7 @@ html {
 /********/
 
 .section-4-heading {
+  font-family: "Montserrat", sans-serif;
   color: goldenrod;
   padding-top: 50px;
   padding-bottom: 70px;
@@ -204,12 +217,14 @@ html {
 
 .my-nav-flex-item-1 {
   margin: 13px 0px 0px 20px;
+  
 }
 
 .my-nav-flex-item-2 {
   text-decoration: none;
   margin: 13px 20px 0px 0px;
   color: goldenrod;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /***********************/
@@ -253,6 +268,7 @@ a {
 
 .heading-before-form {
   /* font-size: 1.5em; */
+  font-family: 'Merriweather Sans', sans-serif;
   text-align: center;
   margin-left: 1%;
   margin-bottom: 2%;
@@ -329,12 +345,12 @@ a {
 
 /***********************/
 
-.heading-div-form-page{
+.heading-div-form-page {
   /* position: absolute; */
+  font-family: 'Merriweather Sans', sans-serif;
   text-align: center;
   padding-top: 125px;
 }
-
 
 .form-grid-item-radio-container {
   width: 15%;
